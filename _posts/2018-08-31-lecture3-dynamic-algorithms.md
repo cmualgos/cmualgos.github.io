@@ -3,7 +3,12 @@ layout: post
 title: "Lecture 3: Dynamic Connectivity and Data Structures"
 date: 2018-08-31
 use_math: true
+excerpt_separator: <!--more-->
 ---
+
+In this post we will talk about some of the data-structure issues that
+arise in algorithms for dynamic connectivity.
+<!--more-->
 
 When talking about dynamic algorithms, we skipped over the details of
 the underlying data structures. These data-structures are interesting
@@ -151,10 +156,13 @@ BST remain small, updating the weight of the subtrees can also be done
 fast, by updating the weights on the path from the updated node all the
 way to the root.
 
+### Further References
+
 You can look at the original paper on Euler-Tour trees for
 [ET-trees](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.53.7942&rep=rep1&type=pdf)
 for more details. A very related data-structure is [link-cut
 trees](https://en.wikipedia.org/wiki/Link/cut_tree) of Danny Sleator and
-Bob Tarjan. Another good set of
+Bob Tarjan. Finally, the
 [slides](http://web.stanford.edu/class/archive/cs/cs166/cs166.1166/lectures/17/Small17.pdf)
-are from the Stanford CS166 class.
+from Stanford's CS166 give a good explanation of the Holm et
+al. algorithm, for those of you wanting to learn more.
