@@ -141,7 +141,7 @@ imagine the list to be elements in a dynamic binary search tree (such as
 a [Splay
 tree](http://www.cs.cmu.edu/afs/cs.cmu.edu/academic/class/15451-s17/www/lectures/lec04-splay.pdf)
 or a red-black tree), we can do all these operations seamlessly, with
-$O(log n)$ update times.
+$O(\log n)$ update times.
 
 Finally, what about the weights? This is easy: for each node in the
 binary search tree (BST), just maintain the weights of the elements in
