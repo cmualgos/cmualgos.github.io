@@ -91,7 +91,7 @@ number of nodes, and then we can alter the levels of edges on that
 side. We will need to maintain extra information to iterate over just
 the edges having a particular level, but I will not get into this
 here. Instead let us talk about how to implement the data-structure
-described above?
+described above.
 
 ## How to Implement such a Data Structure?
 
@@ -103,7 +103,7 @@ tree $T$ as its Euler tour, starting and ending at the root. This is a
 list of length $2|V(T)|-1$. Note that each vertex appears multiple times
 in the list. E.g., see below (figure from [Keith Schwarz](http://www.keithschwarz.com/)'s excellent [slides](http://web.stanford.edu/class/archive/cs/cs166/cs166.1166/lectures/17/Small17.pdf)):
 
-![Tree and its Euler tour representation](/figures/ET-tree.png){:class="img-responsive"}
+![Tree and its Euler tour representation](/figures/ET-tree.png){:max-width: 50%}
 
 For the moment, let's not worry about the low-level implementation
 details, and just imagine how we'd like to ideally implement each of the
