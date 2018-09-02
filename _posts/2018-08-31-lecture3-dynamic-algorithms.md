@@ -103,7 +103,7 @@ tree $T$ as its Euler tour, starting and ending at the root. This is a
 list of length $2|V(T)|-1$. Note that each vertex appears multiple times
 in the list. E.g., see below (figure from [Keith Schwarz](http://www.keithschwarz.com/)'s excellent [slides](http://web.stanford.edu/class/archive/cs/cs166/cs166.1166/lectures/17/Small17.pdf)):
 
-![Tree and its Euler tour representation](/figures/ET-tree.png){:max-width: 50%}
+![Tree and its Euler tour representation](/figures/ET-tree.png){:max-width:"50%"}
 
 For the moment, let's not worry about the low-level implementation
 details, and just imagine how we'd like to ideally implement each of the
