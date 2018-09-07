@@ -5,8 +5,9 @@
 
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
-    TeX: {
-      equationNumbers: {
+    TeX: {	
+    extensions: ["AMSmath.js", "AMSsymbols.js"],
+    equationNumbers: {
         autoNumber: "AMS"
       }
     },
@@ -15,5 +16,5 @@
       displayMath: [ ['$$','$$'], ['\\[', '\\]'] ],
       processEscapes: true,
     }
-  });
+   });
 </script>
