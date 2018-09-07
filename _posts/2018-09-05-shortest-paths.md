@@ -40,7 +40,15 @@ $$
 
 Note that we set $\phi_s \leq 0$, but since we're maximizing in the
 objective, the optimal solution will ensure $\phi_s = 0$.
-  
+
+I like to view this LP this way: you have a graph where each edge
+$(u,v)$ is an inextendible string of length $w_{uv}$. Now you fix the
+position of the node $s$ at zero (i.e., set $\phi_s = 0$) and try to
+pull the rest of the nodes as far as you can away from zero. Naturally
+the furthest you can take node $u$ away from the source/origin is its
+shortest-path distance $d_w(s,u)$. And that is precisely what the LP
+achieves.
+
 Now suppose we take the dual of this LP. Let the dual variables be
 $f_{uv}$ for the first set of primal constraints, and $g$ for the last
 constraint. Since the primal constraints are inequalities, the dual
@@ -60,11 +68,11 @@ $$
 This sends flow from $s$ to all nodes in $V \setminus s$, such that $1$
 unit ends at each other node. The cheapest way to send this flow would
 be along a shortest path, so this dual LP uses min-cost flow to compute
-the SSSP!
+the SSSP! Two different ways to view the SSSP problem.
 
 By the way, Goran mentioned this paper [_Negative-Weight Shortest Paths
 and Unit Capacity Minimum Cost Flow_](https://arxiv.org/abs/1605.01717)
-getting an improvement to Bellman-Ford. it solves the min-cost flow
+getting an improvement to Bellman-Ford. It solves the min-cost flow
 problem on unit-capacity undirected graphs (and hence the single-source
 shortest-path problem with negative edge weights) in time
 $\tilde{O}(m^{10/7} \log M)$ time. And indeed, it's an improvement (for
