@@ -14,11 +14,11 @@ were non-negative, then the all-zeros potential is feasible. Else we
 showed how to compute it using a single call to Bellman-Ford. Let's
 observe some facts about these potentials.
 
-1. We claim that $\phi_t - \phi_s$ is a _lower bound_ on the
-shortest-path distance from $s$ to $t$ (with respect to weights
-$w$). Indeed, consider the shortest-path $P$ from $s$ to $t$ w.r.t $w$:
-summing the reduced weight over the edges in $P$ gives us $\phi_s + w(P)
-- \phi_t \geq 0$, or $\phi_t - \phi_s \leq w(P)$.
+We claim that $\phi_t - \phi_s$ is a _lower bound_ on the shortest-path
+distance from $s$ to $t$ (with respect to weights $w$). Indeed, consider
+the shortest-path $P$ from $s$ to $t$ w.r.t $w$: summing the reduced
+weight over the edges in $P$ gives us $\phi_s + w(P) \- \phi_t \geq 0$,
+or $\phi_t \- \phi_s \leq w(P)$.
 
 Why is this fact interesting? Suppose we set $\phi_s = 0$, and try to
 *maximize* $\phi_t$. I.e., we try to get the _best lower bound_ we can
@@ -30,11 +30,14 @@ potential and $\phi_s = 0$, setting $\phi_u = d_w(s,u)$ gives you the
 maximum value for this LP as well. So this is a way to solve SSSP using
 via a linear program:
 
+$$
 \begin{alignat*}{2}
   \max \sum_{u \neq s} & \phi_u && \\
   \phi_v - \phi_u &\leq w_{uv} &\qquad& \forall (u,v) \in E \\
   \phi_s &\leq 0  &&
 \end{alignat*}
+$$
+
 Note that we set $\phi_s \leq 0$, but since we're maximizing in the
 objective, the optimal solution will ensure $\phi_s = 0$.
   
@@ -44,6 +47,7 @@ constraint. Since the primal constraints are inequalities, the dual
 variables are non-negative. And the primal variables are unconstrained,
 so the dual constraints are equalities.
 
+$$
 \begin{alignat*}{2}
   \min \sum_{(u,v) \in E} & w_{uv} f_{uv} && \\
   \sum_{x: (x,u) \in E} f_{xu} - \sum_{x: (u,x) \in E} f_{ux} &= 1
@@ -51,6 +55,7 @@ so the dual constraints are equalities.
   \sum_{x: (x,s) \in E} f_{xs} - \sum_{x: (s,x) \in E} f_{sx} + g &= 0 &&   \\
   f_{uv}, g &\geq 0  &&
 \end{alignat*}
+$$
 
 This sends flow from $s$ to all nodes in $V \setminus s$, such that $1$
 unit ends at each other node. The cheapest way to send this flow would
@@ -97,7 +102,7 @@ exists. We will hopefully see (and solve) this problem in Homework 2.
 If you've not seen [Strassen's
 algorithm](https://en.wikipedia.org/wiki/Strassen_algorithm) before, it
 is an algorithm for multiplying $n \times n$ matrices in time $n^{\log_2
-7} \approx n^{2.81}}$. It's quite simple to state, and one can think of
+7} \approx n^{2.81}$. It's quite simple to state, and one can think of
 it as a 2-dimensional version of [Karatsuba's
 algorithm](https://en.wikipedia.org/wiki/Karatsuba_algorithm) for
 multiplying two numbers. Mike Paterson has a very beautiful [geometric
