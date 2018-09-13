@@ -9,7 +9,7 @@ use_math: true
 
 In today's lecture, we first finished the proof for Edmonds' Blossom
 Algorithm: we showed a linear time procedure that given graph $G$ and
-matching $M$ eithers find an $M$-augmenting path, or a $M$-flower, or
+matching $M$ either find an $M$-augmenting path, or a $M$-flower, or
 else reports that there is no $M$-augmenting path. The idea was to start
 from the free (unmatched) vertices and explore the graph almost in a
 BFS-like fashion, but alternating between exploring unmatched edges from
@@ -52,7 +52,7 @@ the LP $\max \\{ x_1 + x_2 \mid x_1 + x_2 \leq 1 \\}$, which has optimal
 value $1$ but no extreme points.
 
 Finally, we also talked about the fact that _each polytope is the convex
-hull of its vertices_. In case you havent seen convex hulls before,
+hull of its vertices_. In case you haven't seen convex hulls before,
 let's do this slower. In $2$-dimensions, given a set of points in
 $\mathbb{R}^2$, think of these as being nails hammered into the plane, and the
 convex hull is the region enclosed by a rubber band that is wrapped
@@ -88,7 +88,7 @@ $$ K_{\text{pm-bip}} := \{ x \in \mathbb{R}^m \mid \sum_{e \in \partial v} x_e =
 
 Recall that $\partial v$ is the set of edges incident to vertex $v$.
 (The proof showed that the extreme points of this polytope are precisely
-perfect matchings in $G$.) For non-bipartite graphs, we obseved that the
+perfect matchings in $G$.) For non-bipartite graphs, we observed that the
 above LP was not an accurate representation of the perfect matching
 polytope: e.g., for the $3$-cycle, the above polytope is non-empty, even
 though there are no perfect matchings. And we mentioned Edmonds' theorem
