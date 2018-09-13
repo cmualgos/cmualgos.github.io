@@ -131,7 +131,7 @@ to prove lower bounds on LP size. In 2012, [Fiorini and
 others](https://homepages.cwi.nl/~rdewolf/publ/qc/stoc130-fiorini.pdf)
 showed that the TSP would require LPs of exponential size. The question
 for matchings remained open for a couple more years, until Rothvoss
-result proved his reslt. See [this
+result proved his result. See [this
 tutorial](https://simons.berkeley.edu/talks/extended-formulations1) on
 "extended formulations" and lower bounds to get started on these
 questions.
