@@ -32,15 +32,15 @@ dimensional space).
 In retrospect, I feel I should have spent more time on was the notion of
 a _basic feasible solution_ (bfs), since it's not as intuitive as the
 other two definitions. But it is algorithmically very useful. So let me
-do it again. Consider the polyhedron $K := \{ x \in \mathbb{R}^n \mid
-a_i^\intercal x \geq b_i \}$. It's the intersection of a collection of
-half-spaces. Consider the hyperplanes $a_i^\intercal x = b_i$ --- note
-the equality. If we pick any $n$ of these hyperplanes that are linearly
-independent, then their intersection is a single point. (Just like the
-intersection of $n=2$ non-parallel lines in $\mathbb{R}^2$ is a point,
-as is the like the intersection of $n=3$ linearly independent planes in
-$\mathbb{R}^3$.)  A bfs is a point in the polyhedron $K$ that is the
-intersection of $n$ of these constraints. 
+do it again. Consider the polyhedron $K := \\{ x \in \mathbb{R}^n \mid
+a_i^\intercal x \geq b_i \\}$. It's the intersection of a collection of
+half-spaces. Consider the _bounding hyperplanes_ $a_i^\intercal x = b_i$
+of these half-spaces. If we pick any $n$ of these hyperplanes that are
+linearly independent, then their intersection is a single point. (Just
+like the intersection of $n=2$ non-parallel lines in $\mathbb{R}^2$ is a
+point, as is the like the intersection of $n=3$ linearly independent
+planes in $\mathbb{R}^3$.)  A bfs is a point in the polyhedron $K$ that
+is the intersection of $n$ of these constraints.
 
 The important fact here is that for polyhedra, these three objects are
 equivalent. (It is a useful exercise to draw some $2$-dimensional
@@ -48,7 +48,7 @@ polygons to mull over this.) Moreover, for a polytope $K$ (i.e., a
 bounded polyhedron), for any cost vector $c$, the optimal value of $\max
 \{ c^\intercal x \mid x \in K\}$ is achieved at a vertex.  As an aside,
 if we have an unbounded polyhedron, this may not be true. E.g., consider
-the LP $\{ max \{ x_1 + x_2 \mid x_1 + x_2 \leq 1 \}$, which has optimal
+the LP $max \\{ x_1 + x_2 \mid x_1 + x_2 \leq 1 \\}$, which has optimal
 value $1$ but no extreme points.
 
 Finally, we also talked about the fact that _each polytope is the convex
@@ -57,10 +57,9 @@ let's do this slower. In $2$-dimensions, given a set of points in
 $\mathbb{R}^2$, think of these as being nails hammered into the plane, and the
 convex hull is the region enclosed by a rubber band that is wrapped
 around these nails. Kinda like [this picture](http://www.clear-lines.com/blog/post/Convex-Hull.aspx).
-
 For $3$-dimensions, you now wrap a rubber balloon around the points in
 $\mathbb{R}^3$. (For higher dimensions, you have to use your
-imagination, but you get the idea....) Formally, the convex hull of $S$
+imagination, but you get the idea...) Formally, the convex hull of $S$
 is the set of points that can be written as the convex combinations of
 the points in $S$.
 
@@ -81,9 +80,10 @@ The main result we proved at the end of the lecture was that another way
 to represent the perfect matching polytope for _bipartite_ graphs is as
 follows:
 
-$$ K_{pm} := \{ x \in \mathbb{R}^m \mid \sum_{e \in \partial v} x_e =
+$$ K_{\text{pm-bip}} := \{ x \in \mathbb{R}^m \mid \sum_{e \in \partial v} x_e =
 1, x \geq 0 \}. $$
 
+Recall that $\partial v$ is the set of edges incident to vertex $v$.
 (The proof showed that the extreme points of this polytope are precisely
 perfect matchings in $G$.) For non-bipartite graphs, we obseved that the
 above LP was not an accurate representation of the perfect matching
@@ -92,9 +92,12 @@ though there are no perfect matchings. And we mentioned Edmonds' theorem
 saying that now the perfect matching polytope for _non-bipartite_ graphs
 is as follows:
 
-$$ K_{pm} := \{ x \in \mathbb{R}^m \mid \sum_{e \in \partial v} x_e =
+$$ K_{\text{pm-nonbip}} := \{ x \in \mathbb{R}^m \mid \sum_{e \in \partial v} x_e =
 1, \sum_{e \in \partial S} x_e \geq
 1 \text{ for all odd sets } S, x \geq 0 \}. $$
+
+Here $\partial S$ is the set of edges with one endpoint in $S$ and
+another not in $S$.
 
 ### Getting a Smaller LP for Perfect Matchings
 
@@ -116,7 +119,7 @@ new constraints.
 
 In 1988 [Mihalis Yannakakis](http://www.cs.columbia.edu/~mihalis/) had
 asked whether a compact LP for perfect matchings and TSP existed, and
-had [started building some beautiful
+started [building some beautiful 
 machinery](http://www.tcs.tifr.res.in/~prahladh/teaching/2011-12/comm/papers/Yannakakis1991.pdf)
 to prove lower bounds on LP size. In 2012, [Fiorini and
 others](https://homepages.cwi.nl/~rdewolf/publ/qc/stoc130-fiorini.pdf)
@@ -124,5 +127,6 @@ showed that the TSP would require LPs of exponential size. The question
 for matchings remained open for a couple more years, until Rothvoss
 result proved his reslt. See [this
 tutorial](https://simons.berkeley.edu/talks/extended-formulations1) on
-"extended formulations" and lower bounds to get started on these questions.
+"extended formulations" and lower bounds to get started on these
+questions.
 
