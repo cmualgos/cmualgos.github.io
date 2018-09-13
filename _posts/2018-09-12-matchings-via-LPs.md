@@ -46,9 +46,9 @@ The important fact here is that for polyhedra, these three objects are
 equivalent. (It is a useful exercise to draw some $2$-dimensional
 polygons to mull over this.) Moreover, for a polytope $K$ (i.e., a
 bounded polyhedron), for any cost vector $c$, the optimal value of $\max
-\{ c^\intercal x \mid x \in K\}$ is achieved at a vertex.  As an aside,
+\\{ c^\intercal x \mid x \in K\\}$ is achieved at a vertex.  As an aside,
 if we have an unbounded polyhedron, this may not be true. E.g., consider
-the LP $max \\{ x_1 + x_2 \mid x_1 + x_2 \leq 1 \\}$, which has optimal
+the LP $\max \\{ x_1 + x_2 \mid x_1 + x_2 \leq 1 \\}$, which has optimal
 value $1$ but no extreme points.
 
 Finally, we also talked about the fact that _each polytope is the convex
@@ -63,16 +63,19 @@ imagination, but you get the idea...) Formally, the convex hull of $S$
 is the set of points that can be written as the convex combinations of
 the points in $S$.
 
-Now we discussed the notion of integer polytopes, where the vertices are
-at integer points. In fact, we will mostly care about polytopes whose
-vertices encode combinatorial structures. E.g., matchings, trees,
+### Integer Polytopes
+
+Next we discussed the notion of integer polytopes, where the vertices
+are at integer points. In fact, we will mostly care about polytopes
+whose vertices encode combinatorial structures. E.g., matchings, trees,
 arborescences, TSP tours, etc. Given a graph $G$ with $m$ edges, we can
 use Boolean vectors in $\{0,1\}^m$ to encode sets of edges. E.g., given
 the collection of Boolean vectors representing perfect matchings in $G$,
 we defined the _perfect matching polytope_ to be the convex hull of
 these vectors. Hence, we could find a max-weight perfect matching by
 optimizing over this polytope. The problem is that this polytope has a
-very awkward description (as the convex hull).
+very awkward description (as the convex hull of potentially exponential
+number of points, one for each perfect matching).
 
 ### The Perfect Matching Polytopes
 
@@ -101,12 +104,15 @@ another not in $S$.
 
 ### Getting a Smaller LP for Perfect Matchings
 
-The perfect matching LP we wrote down is an exponential-sized
-LP. However, we can solve this LP in polynomial time. (We will discuss
-this later in the course, when we talk about the Ellipsoid method.)
+You may complain that the perfect matching LP for general graphs is
+exponential-sized, and hence may not be much more use than a polytope
+defined as a convex hull of exponentially many vertices. However, it
+turns out we can solve this LP in polynomial time. (We will discuss this
+later in the course, when we talk about the Ellipsoid method.)
 Basically, there is a poly-time algorithm that given a potential
 solution $x$ to this LP, outputs a violated constraint, if any. (This is
-called a "separation oracle" in the jargon.)
+called a "separation oracle" in the jargon.) And this is enough to solve
+linear programs fast.
 
 Finally, we mentioned an amazing theorem of [Thomas
 Rothvoss](https://sites.math.washington.edu/~rothvoss/) saying that any
