@@ -131,8 +131,9 @@ to prove lower bounds on LP size. In 2012, [Fiorini and
 others](https://homepages.cwi.nl/~rdewolf/publ/qc/stoc130-fiorini.pdf)
 showed that the TSP would require LPs of exponential size. The question
 for matchings remained open for a couple more years, until Rothvoss
-result proved his result. See [this
+proved his result in 2014. See [this
 tutorial](https://simons.berkeley.edu/talks/extended-formulations1) on
 "extended formulations" and lower bounds to get started on these
-questions.
+questions, and [this paper](https://arxiv.org/abs/1711.10145) on lower bounds for even _approximating_ the 
+perfect matching polytope.
 
