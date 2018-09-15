@@ -15,8 +15,8 @@ second, answering some questions along the way.
 
 In this problem we are given a polynomial $P(x_1, x_2, \ldots, x_n)$
 over some field $\mathbb{F}$, and we want to test if it is identically
-zero or not. (For the rest of this post I will just write $P(\x)$, where
-$\x \in \mathbb{F}^n$.) If $P$ were written out explicitly as a list of
+zero or not. (For the rest of this post I will just write $P(\mathbf{x})$, where
+$\mathbf{x} \in \mathbb{F}^n$.) If $P$ were written out explicitly as a list of
 monomials and their coefficients, this would not be a problem, since we
 could just check that all the coefficients are zero. But if $P$ is
 represented implicitly, say as a determinant, then things get more
@@ -25,8 +25,8 @@ tricky.
 The algorithm we saw, based on the [Schwartz-Zippel
 lemma](https://en.wikipedia.org/wiki/Schwartz%E2%80%93Zippel_lemma),
 says the following: suppose we are given $P$ via a _value oracle_. This
-oracle is some black-box that given some value $\a \in \mathbb{F}^n$,
-evaluates $P(\a)$ in constant time. Then we can decide whether $P$ is
+oracle is some black-box that given some value $\mathbf{a} \in \mathbb{F}^n$,
+evaluates $P(\mathbf{a})$ in constant time. Then we can decide whether $P$ is
 identically zero or not, and be correct with probability at least $1 -
 d/|S|$, where $d$ is the degree of $P$, and $S \subseteq \mathbb{F}$ is
 the size of the set we choose to pick from. Even if $\mathbb{F}$ is
@@ -104,14 +104,14 @@ Here's an approach that came up in discussions after lecture (thanks
 Ziye, Corwin, and others) which is better than the one I was proposing.
 Now set $M$ to be $0$ for non-edges, $x_{ij}$ for blue edges, and $y
 x_{ij}$ for red edges. The determinant of $M$ is now a polynomial in
-$m+1$ variables and degree at most $2n$. If you write $P(\x,y)$ as
-$\sum_{i = 0}^n y^i Q_i(\x)$, then $Q_i(\x)$ is a multilinear degree-$n$
-polynomial corresponding to $i$-red matchings. Hence $Q_i(\x)$ is a
+$m+1$ variables and degree at most $2n$. If you write $P(\mathbf{x},y)$ as
+$\sum_{i = 0}^n y^i Q_i(\mathbf{x})$, then $Q_i(\mathbf{x})$ is a multilinear degree-$n$
+polynomial corresponding to $i$-red matchings. Hence $Q_i(\mathbf{x})$ is a
 non-zero polynomial if there is at least one such $i$-red
-matching. (Same argument as for the Edmonds matrix.) Now set the $\x$
+matching. (Same argument as for the Edmonds matrix.) Now set the $\mathbf{x}$
 variables randomly (say, to values $x_{ij} = a_{ij}$) from a large
-enough set $S$. This will result in a polynomial $R(y) = P(\a,y)$ whose
-only variable is $y$. And $Q_k(\a)$ will be non-zero with high
+enough set $S$. This will result in a polynomial $R(y) = P(\mathbf{a},y)$ whose
+only variable is $y$. And $Q_k(\mathbf{a})$ will be non-zero with high
 probability, by Schwartz-Zippel. Now trying $n+1$ different values of
 $y$, you can interpolate this polynomial $R(y)$, and see that the
 coefficient of $y^k$ is non-zero.
@@ -119,7 +119,7 @@ coefficient of $y^k$ is non-zero.
 We focused on bipartite graphs for simplicity: these ideas extend to
 non-bipartite graphs too, where the replacements of $x_{ij}$ by $y
 x_{ij}$ are done in the Tutte matrix. The only thing to do is to check
-that $Q_i(\x)$ is still a non-zero polynomial if there is at least one
+that $Q_i(\mathbf{x})$ is still a non-zero polynomial if there is at least one
 such $i$-red matching, and for this you need to run through the standard
 Tutte matrix argument and see it works here too. The traditional
 argument for the Tutte matrix goes via the jargon of [Pfaffians](https://en.wikipedia.org/wiki/Pfaffian) and
