@@ -142,7 +142,7 @@ of Les Valiant and Vijay Vazirani.
 ### Removing the Uniqueness Assumption (More Indirect Approach)
 
 In lecture I started explaining the approach that Mulmuley Vazirani
-Vazirani propose, via the "isolation lemma". It's very pretty in its own
+Vazirani proposal, via the "isolation lemma". It's very pretty in its own
 right, but given the above argument, it seems overkill for now. I will
 say more here later, both about their approach and the isolation lemma,
 but that will be for another post (to come shortly).
