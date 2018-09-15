@@ -109,11 +109,11 @@ $\sum_{i = 0}^n y^i Q_i(x)$, then $Q_k(x)$ is a multilinear polynomial
 corresponding to $k$-red matchings. Hence $Q_k(x)$ is a non-zero
 polynomial if there is at least one such matching. Now set the $x$
 variables randomly (say, to values $x_{ij} = a_{ij}$) from a large
-enough set $S$. This will result in a polynomial whose only variable is
-$y$. And $Q_k(a)$ will be non-zero with high probability, by
-Schwartz-Zippel. Now trying $n+1$ different values of $y$, you can
-interpolate this polynomial, and see that the coefficient of $y^k$ is
-non-zero.
+enough set $S$. This will result in a polynomial $R(y) = P(a,y)$ whose
+only variable is $y$. And $Q_k(a)$ will be non-zero with high
+probability, by Schwartz-Zippel. Now trying $n+1$ different values of
+$y$, you can interpolate this polynomial $R(y)$, and see that the
+coefficient of $y^k$ is non-zero.
 
 We focused on bipartite graphs for simplicity: these ideas extend to
 non-bipartite graphs too, where the replacements of $x_{ij}$ by $y
