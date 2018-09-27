@@ -42,7 +42,7 @@ One direction is easy: suppose that $G$ has either $K_5$ or $K_{3,3}$ as a minor
 More on Treewidth of Planar Graphs
 -----------
 
-In class, we saw an unproved theorem about a treewidth bound on planar graphs with small diameter. What if we don't restrict the diameter. After all, the diameter may not be a good measure for large-diameter graphs, since paths are planar, have diameter $n-1$, and yet have treewidth $1$. It turns out that planar graphs have treewidth at most $O(\sqrt n)$, and this is tight, achieved by the $\sqrt{n}$-by-$\sqrt{n}$ grid on $n$ vertices (see my lecture notes, page 10).
+In class, we saw an unproved theorem about a treewidth bound on planar graphs with small diameter. What if we don't restrict the diameter? After all, the diameter may not be a good measure for large-diameter graphs, since paths are planar, have diameter $n-1$, and yet have treewidth $1$. It turns out that planar graphs have treewidth at most $O(\sqrt n)$, and this is tight, achieved by the $\sqrt{n}$-by-$\sqrt{n}$ grid on $n$ vertices (see my lecture notes, page 10).
 
 As an exercise, try to prove that a $\sqrt{n}$-by-$\sqrt{n}$ grid has treewidth $O(\sqrt{n})$. (The other direction, proving that the treewidth is $\Omega(\sqrt{n})$, requires some deeper theory of treewidth.)
 
