@@ -15,4 +15,4 @@ Note that $x_k \gets \neg x_k$ will satisfy the $C$, it might make some other cl
 
 **Lemma** If the 2-SAT formula is satisfiable, the above algorithm will find a satisfying assignment with at least constant probability.
 
-**Proof** Let $y = (y_1, \ldots, y_n)$ be any satisfying assignment and let $D = |\{ i \in [n] \mid x_i \neq y_i \}|$ be the number of variables in $x$ whose value differs from $y$. Initially, $D$ is distributed as a binomial distribution $\mathrm{Bin}(n, 1/2)$. Suppose that at some iteration of the while loop with a clause involving $\{
+**Proof** Let $y = (y_1, \ldots, y_n)$ be any satisfying assignment and let $D = |\\{ i \in [n] \mid x_i \neq y_i \\}|$ be the number of variables in $x$ whose value differs from $y$. Initially, $D$ is distributed as a binomial distribution $\mathrm{Bin}(n, 1/2)$. Suppose that at some iteration of the while loop with a clause involving $\\{x_i, x_j\\}$
