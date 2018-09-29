@@ -15,4 +15,4 @@ Note that $x_k \gets \neg x_k$ will satisfy the $C$, it might make some other cl
 
 **Lemma** If the 2-SAT formula is satisfiable, the above algorithm will find a satisfying assignment with at least constant probability.
 
-**Proof** Let $x^* = (x^*_1, \ldots, x^*_n)$ be any satisfying assignment. 
+**Proof** Let $y = (y_1, \ldots, y_n)$ be any satisfying assignment and let $D = |\{ i \in [n] \mid x_i \neq y_i \}$ be the number of assignments in $x$ that differ from $y$. Initially, $D$ is distributed as a binomial distribution $\mathrm{Bin}(n, 1/2)$.
