@@ -5,28 +5,12 @@ date: 2018-10-05
 use_math: true
 ---
 
-## The Example
-
-Recall the example we did in lecture. The max-flow is $F = 2$, using the
-two straight paths. But the zig-zag path only uses three edges, as
-opposed to the four for the straight paths. So whatever Hedge does, if
-we want the flow to be $(1+\varepsilon)$-approximate, only
-$O(\varepsilon)$ of the flow should use the zig-zag path. Is that the
-case? Let's see why.
-
-Note that the 
-
-
-
-Consider the point in time where the straight paths and the zig-zag
-paths have the same length.
-
-
 ## The Expert Weights, and the Zero-Sum Game view
 
-Pedro asked what these probabilities were doing. Well, they play the
-role of the dual variables (and averaging them can give the duals). Or
-sometimes it is simpler to view them in the zero-sum game view. 
+Pedro asked for some intuition for how these probabilities were
+evolving. Well, they're playing the role of the dual variables (and
+averaging them can indeed give the duals). But I find it cleaner to view
+them in the zero-sum game view.
 
 ### The Cut-Flow Game
 
@@ -53,7 +37,8 @@ because we respect edge capacities, $\sum_{P: e \in P} f_P \leq 1$ and
 hence the payoff is at most $1/F$.
 
 Hence one way to solve the zero-sum game is for the row-player to
-compute the min-cut and the column-player to compute the max-flow.
+compute the min-cut and the column-player to compute the max-flow. Since
+MW solves zero-sum games, let's see what it does.
 
 ### The Experts-Based Algorithm
 
@@ -64,13 +49,15 @@ take the row-player's empirical average $\hat{x} := \sum_t p^t$ and the
 column-player's empirical average $\hat{f} := \sum_t f^t$. These are
 almost optimal (minimax) responses to each other. Hence, $\hat{f}$ will
 converge to a max-flow, and $\hat{x}$ will converge to a (fractional)
-minimum cut.
+minimum cut. In other words, the $p^t$ values (averaged) are acting like the minimum cuts. 
 
 ## The Name of the Game: Controlling the Width
 
-Recall that for the analysis of Hedge, we said that if the "gain" (or
-"loss") vectors are bounded in $[-\gamma, \rho]$, then the time to get
-the average regret down to $\varepsilon$ is
+The reason why we went from using shortest paths to using electrical
+flows is all to do with the _width_. Let me say some more. Recall that
+for the analysis of Hedge, we said that if the "gain" (or "loss")
+vectors are bounded in $[-\gamma, \rho]$, then the time to get the
+average regret down to $\varepsilon$ is
 
 $$ T = O\left( \frac{\rho \gamma \cdot \llog N}{\varepsilon^2}
 \right). $$
