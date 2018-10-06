@@ -116,13 +116,14 @@ current of $\Theta(\sqrt{m})$ goes on the top edge. Hence the width.
 ## The Improved Electrical Flow Algorithm
 
 How does one do better? The idea is clever but simple. Make the width
-small by construction. If you find the electrical flow and the flow over
-some edge $e$ is more than $\approx m^{1/3}$, just delete that
-edge. Now, by construction, the width is $\approx m^{1/3}$. The worry is
-that the max-flow may go down if we delete edges. What if we end up
-deleting all the edges? The proof (also in the old lecture notes) shows
-that we delete only an $\varepsilon F$ number of edges, so things are
-controlled.lecture
+small by force. If you find the electrical flow and the flow over some
+edge $e$ is more than $\approx m^{1/3}$, just delete that edge. Now, by
+construction, the width is $\approx m^{1/3}$. However, now we're
+changing the structure of the proof. The worry is that the max-flow may
+go down if we delete edges. What if we end up deleting all the edges?
+Thankfully, the proof (also in the old lecture notes) shows that we
+delete only an $\varepsilon F$ number of edges, so things are
+controlled.
 
 And here's another example (via Gary, who got this one from Olek Madry)
 that shows that the fancier algorithm does need $\Omega(m^{1/3})$
