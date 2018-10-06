@@ -15,9 +15,10 @@ them in the zero-sum game view.
 ### The Cut-Flow Game
 
 One way to view the max-flow problem is as a zero-sum game. The row (or
-_cut_) player picks a random edge, and the column (or _flow_) player
-picks a random $s$-$t$ path. The payoff to the row-player is $1$ if the
-edge she picks lies on the path picked by the column player. Assume the
+_cut_) player Clara picks a random edge, and the column (or _flow_)
+player Fred picks a random $s$-$t$ path. The payoff to the row-player
+Clara is $1$ if the edge she picks lies on the path picked by the column
+player, and is zero if her edge does not lie on the path. Assume the
 maximum $s$-$t$ flow is $F$
 
 Observation: the row player can guarantee she gets a payoff of at least
