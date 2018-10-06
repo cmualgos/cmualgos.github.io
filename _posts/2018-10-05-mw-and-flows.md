@@ -59,7 +59,7 @@ for the analysis of Hedge, we said that if the "gain" (or "loss")
 vectors are bounded in $[-\gamma, \rho]$, then the time to get the
 average regret down to $\varepsilon$ is
 
-$$ T = O\left( \frac{\rho \gamma \cdot \llog N}{\varepsilon^2}
+$$ T = O\left( \frac{\rho \gamma \cdot \log N}{\varepsilon^2}
 \right). $$
 
 The quantity $\max\{\rho, \gamma\}$ is called the _width_ of the
@@ -105,7 +105,7 @@ from the Christiano et al. paper that shows that the width of the basic
 electrical flow oracle can be as large as $\sqrt{m}$, with all edges
 having unit resistance. 
 
-![Example for m-one-half](/figures/elecflow1.jpeg)
+![Example for m-one-half](/figures/elecflow1.jpg)
 
 The effective resistance of the entire
 collection of black edges is $1$, so half the current flows on the top
@@ -127,7 +127,7 @@ And here's another example (via Gary, who got this one from Olek Madry)
 that shows that the fancier algorithm does need $\Omega(m^{1/3})$
 iterations, and does need to delete $\Omega(m^{1/3})$ edges. 
 
-![Example for m-one-third](/figures/elecflow2.jpeg)
+![Example for m-one-third](/figures/elecflow2.jpg)
 
 Again, in this example, $m = \Theta(n)$. And again, each black gadget
 has a unit effective resistance, and if you do the calculation, the
