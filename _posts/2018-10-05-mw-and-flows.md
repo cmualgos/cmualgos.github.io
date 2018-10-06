@@ -101,10 +101,10 @@ all the other losses.
 ### A Tight Example for the Basic Electrical Flow Algorithm
 
 So is the width of this electrical flow algorithm actually
-$\Omega(\sqrt{m})$, or do we need a smarter analysis? Here's an example
-from the Christiano et al. paper that shows that the width of the basic
-electrical flow oracle can be as large as $\sqrt{m}$, with all edges
-having unit resistance. 
+$\Omega(\sqrt{m})$, or is the algorithm good and we just need a smarter
+analysis? Here's an example from the Christiano et al. paper that shows
+that the width of the basic electrical flow oracle can be as large as
+$\sqrt{m}$, with all edges having unit resistance.
 
 ![Example for m-one-half](/figures/elecflow1.jpg)
 
