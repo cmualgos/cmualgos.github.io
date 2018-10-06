@@ -85,10 +85,10 @@ average problem, one which has much better width.
 Sarthak had a good question: don't we need to show that the electrical
 flow actually satisfies the average problem? Indeed we do, I completely
 forgot to show that in lecture. The proof is easy, though. If we set
-$r_e := p^t_e + \varepsilon/m$, the max-flow $f^*$ has energy burn
-$\sum_e (f^*_e)^2 r_e \leq (1+\varepsilon)$. So the electrical flow $f$
+$r_e := p^t_e + \varepsilon/m$, the max-flow $f^\star$ has energy burn
+$\sum_e (f^\star_e)^2 r_e \leq (1+\varepsilon)$. So the electrical flow $f$
 has at most as much energy burn, i.e., $\sum_e f^2_e r_e \leq
-\mathcal{E}(f^*) \leq (1+\varepsilon)$. Now using Cauchy-Schwarz, we get
+\mathcal{E}(f^\star) \leq (1+\varepsilon)$. Now using Cauchy-Schwarz, we get
 
 $$ \sum_e f_e r_e \leq \sqrt{ (\sum_e f_e^2 r_e) (\sum_e r_e) } \leq
 \sqrt{ (1+\varepsilon)(1+\varepsilon) }. $$
