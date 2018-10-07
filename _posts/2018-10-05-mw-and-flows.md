@@ -148,18 +148,19 @@ example we did in lecture.
 ![Example for Flows using Multiplicative Weights](/figures/flow-mw.png)
 
 The max-flow is $F = 2$, using the two straight paths. But the zig-zag
-path only uses three edges, as opposed to the $n/2$ for the straight
-paths, so at the start the Hedge-based algorithm really prefers the
-zig-zag path. But eventually, whatever Hedge does, if we want the flow
-to be $(1+\varepsilon)$-approximate, only $O(\varepsilon)$ of the flow
-should use the zig-zag path. And hence, after some time, most of the
-paths the algorithm finds should be the straight paths. Let's see why
-that's the case.
+path (highlighted) only uses three edges, as opposed to the $n/2$ for
+the straight paths, so at the start the Hedge-based algorithm really
+prefers the zig-zag path. But eventually, whatever Hedge does, if we
+want the flow to be $(1+\varepsilon)$-approximate, only $O(\varepsilon)$
+of the flow should use the zig-zag path. And hence, after some time,
+most of the paths the algorithm finds should be the straight
+paths. Let's see why that's the case.
 
 For simplicity, assume that the length of an edge is $e^{\varepsilon
 \cdot \text{load}}$. (The actual lengths are $e^{\varepsilon \cdot
-\text{(load} - \text{number of iterations)} }$, but that does not change
-much and just makes the calculations dirtier.
+\text{(load} - \text{number of iterations)} }$, but dropping the $e^{-
+\varepsilon \text{number of iterations}}$ term from every edge does not
+change anything, and just makes the calculations dirtier.
 
 Consider the situation after some iteration $t$. We've sent $2t$ units
 of flow so far, since we send $F = 2$ units per iteration. Say $\delta
