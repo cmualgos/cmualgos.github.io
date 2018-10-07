@@ -139,3 +139,41 @@ constant fraction of the current, or about $\Theta(n^{1/3})$ goes on the
 edge $e_1$. Once that is deleted, the next red edge $e_2$ carries a lot
 of current, etc. Until all red edges get deleted.
 
+## The Example from Lecture
+
+Some of you asked me for more details about the example, to understand
+how it would evolve. For that, let's consider a generalization of the
+example we did in lecture.
+
+![Example for Flows using Multiplicative Weights](/figures/flow-mw.png)
+
+The max-flow is $F = 2$, using the two straight paths. But the zig-zag
+path only uses three edges, as opposed to the $n/2$ for the straight
+paths, so at the start the Hedge-based algorithm really prefers the
+zig-zag path. But eventually, whatever Hedge does, if we want the flow
+to be $(1+\varepsilon)$-approximate, only $O(\varepsilon)$ of the flow
+should use the zig-zag path. And hence, after some time, most of the
+paths the algorithm finds should be the straight paths. Let's see why
+that's the case.
+
+For simplicity, assume that the length of an edge is $e^{\varepsilon
+\cdot \text{load}}$. (The actual lengths are $e^{\varepsilon \cdot
+\text{(load} - \text{number of iterations)} }$, but that does not change
+much and just makes the calculations dirtier.
+
+Consider the situation after some iteration $t$. We've sent $2t$ units
+of flow so far, since we send $F = 2$ units per iteration. Say $\delta
+t$ of the iterations chose the zig-zag path. The load on the top-right
+and bottom-left edges is $(1+\delta)t$, so their lengths are
+$e^{\varepsilon (1+\delta)t}$. The lengths of all other edges on the top
+and bottom are $e^{\varepsilon (1-\delta)t}$. We'll ignore the length of
+the vertical edge to make things simple --- it's not really crucial.
+
+Consider time $T = \Omega(\log m/\varepsilon^2)$, the length of the top
+left path is $n e^{\varepsilon (1-\delta)T}$. This is $\leq
+e^{\varepsilon (1+\delta)T}$ if $\delta \geq \varepsilon$. So anytime
+after time $T$, if $\gg \varepsilon$ fraction of the total flow is on on
+the zig-zag path, we'll be sending flows on the straight paths and
+thereby correcting this situation. Indeed, this ensures that the average
+flow is at most $(1+\varepsilon)$ on all edges after $\Theta(T)$ time.
+
