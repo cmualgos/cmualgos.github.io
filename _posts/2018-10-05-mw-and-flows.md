@@ -160,7 +160,7 @@ For simplicity, assume that the length of an edge is $e^{\varepsilon
 \cdot \text{load}}$. (The actual lengths are $e^{\varepsilon \cdot
 \text{(load} - \text{number of iterations)} }$, but dropping the $e^{-
 \varepsilon \text{number of iterations}}$ term from every edge does not
-change anything, and just makes the calculations dirtier.
+change anything, and makes the calculations easier.)
 
 Consider the situation after some iteration $t$. We've sent $2t$ units
 of flow so far, since we send $F = 2$ units per iteration. Say $\delta
