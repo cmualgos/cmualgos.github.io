@@ -10,8 +10,8 @@ use_math: true
 One major reason for mirror descent is that it is a general algorithm
 that allows us to tune the convergence guarantee to the "geometry" of
 the problem. If you look at the main theorem, it asks you to fix a norm
-$\| \cdot \|$, such that the gradients of the functions $f_t$ are
-bounded by $G$ with respect to the dual norm $\| \cdot \|_*$. Then it
+$\\| \cdot \\|$, such that the gradients of the functions $f_t$ are
+bounded by $G$ with respect to the dual norm $\\| \cdot \\|\_\*$. Then it
 asks you to fix a function $h$ which is $\alpha_h$-strongly convex with
 respect to the primal norm. Now the online guarantee shows that for any
 $x^*$, we have the total regret is
@@ -60,7 +60,7 @@ Someone (Ellis? Greg?) asked about doing projections onto convex sets:
 indeed, these can be tricky in general, requiring the full power of convex
 programming. There are some cases which are easy --- e.g., projecting
 $x$ with respect to the KL divergence onto the probability simplex is
-achieved by taking $\frac{x}{\|x\|_1}$, i.e., by rescaling so that the
+achieved by taking $\frac{x}{\\|x\\|_1}$, i.e., by rescaling so that the
 $\ell_1$ length of the vector becomes $1$. (See the next HW.)
 
 However, if you don't like projecting, here's a different algorithm to
