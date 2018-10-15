@@ -19,11 +19,11 @@ $x^*$, we have the total regret is
 $$ \sum_t f_t(x_t) - \sum_t f_t(x^*) \leq \frac{\eta G^2}{2\alpha_h} T +
 \frac{D_h(x^* \| x_0)}{\eta}. $$
 
-In other words, we can now trade-off the $G = \max_t \| \nabla f_t \|_*$
-term with the Bregman distance term $D_h(x^* \| x_0)$. E.g., for the
-standard experts problem, using the $\ell_2$ norm and $h(x) = \frac12 \|
-x \|^2$, we get that $G = \sqrt{n}$, but the distance $D_h(x^* \| x_0) =
-\frac12 \| x^* - x_0\|^2 \leq 2$. On the other hand, changing the norm
+In other words, we can now trade-off the $G = \max_t \\| \nabla f_t \\|\_\*$
+term with the Bregman distance term $D_h(x^* \\| x_0)$. E.g., for the
+standard experts problem, using the $\ell_2$ norm and $h(x) = \frac12 \\|
+x \\|^2$, we get that $G = \sqrt{n}$, but the distance $D_h(x^* \| x_0) =
+\frac12 \\| x^* - x_0\\|^2 \leq 2$. On the other hand, changing the norm
 to $\ell_1$, and taking the negative entropy function $h(x) = \sum_i x_i
 \log x_i$ reduces the bound on the gradients to $1$, at the expense of
 increasing the latter term to $O(\log n)$.
