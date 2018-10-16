@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Lecture 19: Mirror Descent"
-date: 2018-10-05
+date: 2018-10-10
 use_math: true
 ---
 
