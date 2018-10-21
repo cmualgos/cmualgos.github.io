@@ -84,22 +84,22 @@ polytope and linearly independent constraints.
 
 ### A Simple Algorithm
 
-Let $x^*_t$ denote the optimal solution for the function $\eta_t$. And
+Let $x_t^\*$ denote the optimal solution for the function $\eta_t$. And
 for brevity, let $f_t$ denote $f_{\eta_{t}}(x)$. Assume we know
-$x^*_0$. Here's one simple algorithm:
+$x_0^\*$. Here's one simple algorithm:
 
 1. $\eta_{t+1} \gets \eta_t (1 - c/\nu)$.
 
-2. Find $x_{t+1} \approx x^*_{t+1}$ by minimizing $f_{t+1}(x)$ using
+2. Find $x_{t+1} \approx x_{t+1}^\*$ by minimizing $f_{t+1}(x)$ using
      Newton's method, starting at $x_t \approx x^*_t$.
 
 Since Newton's method is great if you start off with a point in the
 region of convergence, we want to prove that the point $x_t$ we find by
 approximately minimizing $f_t$ is in the region of convergence for
 $f_{t+1}$.  Let's try to show a simpler guarantee, that the _optimizer_
-$x^*_t$ for $f_t$ is in the region of convergence for $f_{t+1}$.
+$x_t^\*$ for $f_t$ is in the region of convergence for $f_{t+1}$.
 Hopefully this proof will be robust enough to show that the point $x_t
-\approx x^*_t$ found by our algorithm is also in the region of
+\approx x_t^\*$ found by our algorithm is also in the region of
 convergence. And then we'll be done.
 
 Here's the proof sketch. We would like to measure the goodness of a
