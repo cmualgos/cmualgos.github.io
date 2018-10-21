@@ -108,7 +108,7 @@ the function is at the point $x$. After all, we're looking for a point
 where the gradient is zero! So define the measure of goodness of a point
 $x$ to be 
 
-$$ \lambda_t(x) := \\| \nabla f_t(x) \\|. $$
+$$ \lambda_t(x) := \| \nabla f_t(x) \|. $$
 
 So now we'd like to prove the following two facts:
 
@@ -149,7 +149,7 @@ and recall that the Hessian of a function $f$ is the matrix $H(x)$ of
 second-derivatives at the point $x$. Then the definition of $\lambda_t$
 is formally:
 
-$$ \lambda_t(x) := \\| \nabla f_t(x) \\|_{H(x)^-1}. $$
+$$ \lambda_t(x) := \| \nabla f_t(x) \|_{H(x)^-1}. $$
 
 It is for this definition of $\lambda_t$ that we prove the two facts
 above. The proofs of the two facts above appear in standard texts (e.g.,
