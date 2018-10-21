@@ -7,8 +7,7 @@ use_math: true
 
 ## Newton's Method
 
-To warm-up, let's recall Newton's method (or the Newton-Raphson method)
-again. Suppose we want to find a root of a univariate function $f(x)$,
+To warm-up, let's recall [Newton's method](https://en.wikipedia.org/wiki/Newton%27s_method) (or the Newton-[Raphson](https://en.wikipedia.org/wiki/Joseph_Raphson) method). Suppose we want to find a root of a univariate function $f(x)$,
 i.e., some point $x^+$ such that $f(x^+) = 0$ Then one way is to start
 with a "good" guess $x_0$, and then do
 
@@ -17,15 +16,15 @@ $$ x_{t+1} \gets x_t - \frac{f(x_t)}{f'(x_t)}. $$
 The intuition for this comes from drawing [this picture](http://mathfaculty.fullerton.edu/mathews/n2003/newtonsmethod/Newton'sMethodProof/Images/Newton'sMethodProof_gr_17.gif). Or looking at
 this (fascinating!) [animation from Wikipedia](https://en.wikipedia.org/wiki/Newton%27s_method#/media/File:NewtonIteration_Ani.gif).
 
-Now that can find roots, we can also solve equational constraints $f(x)
-= g(x)$ (by finding a root of $h(x) := f(x) - g(x)$), or minimize $f(x)$
+Now that can find roots, we can solve equational constraints $f(x) =
+g(x)$ (by finding a root of $h(x) := f(x) - g(x)$), or minimize $f(x)$
 (by finding a root of the derivative $f'(x)$)). Specifically, to
-minimize $f(x)$, the update rule just changes by taking one extra
-derivative in $f$, and hence becomes
+minimize the function $f(x)$, the update rule just changes by taking one
+extra derivative in $f$, and hence becomes
 
 $$ x_{t+1} \gets x_t - \frac{f'(x_t)}{f''(x_t)}. $$
 
-This extends to multi-variate functions $f: \mathbb{R}^n \to
+This [extends](https://en.wikipedia.org/wiki/Newton%27s_method_in_optimization) to multi-variate functions $f: \mathbb{R}^n \to
 \mathbb{R}$: indeed, if the Hessian of the function $f$ at the point $x$
 is defined to be $H(x)$, where $(H(x))_{ij} = \frac{\partial^2
 f(x)}{\partial x_i \partial x_j}$, the update rule becomes
@@ -36,8 +35,8 @@ which is syntactically the same expression as the preceding one. And
 this also looks very much like the gradient descent update rule, where
 you are preconditioning by the Hessian of $f$ instead of identity (as in
 basic gradient descent), or by the Hessian of the mirror map $h$ (as in
-mirror descent). Hence, updates given by $x_{t+1} \gets x_t - Q^{-1}
-(\nabla f(x_t))$ for some PSD $Q = Q(x_t)$ are called quasi-Newton methods.
+mirror descent). Hence, methods prescribed by the update rule $x_{t+1} \gets x_t - Q^{-1}
+(\nabla f(x_t))$ for some PSD $Q = Q(x_t)$ are called [quasi-Newton methods](https://en.wikipedia.org/wiki/Quasi-Newton_method).
 
 An aside: to implement an update like $x_{t+1} \gets x_t - Q^{-1} \nabla
 f(x_t)$, you need to solve for $x_{t+1}$. I.e., you want to find $z$
@@ -149,14 +148,19 @@ and recall that the Hessian of a function $f$ is the matrix $H(x)$ of
 second-derivatives at the point $x$. Then the definition of $\lambda_t$
 is formally:
 
-$$ \lambda_t(x) := \| \nabla f_t(x) \|_{H(x)^{-1}}. $$
+$$ \lambda_t(x) := \| \nabla f_t(x) \|_{H(x)^{-1}} = \sqrt{ \nabla
+f_t(x)^\intercal H(x)^{-1} \nabla f_t(x) }.  $$
 
-It is for this definition of $\lambda_t$ that we prove the two facts
-above. The proofs of the two facts above appear in standard texts (e.g.,
-these downloadable books by [Yurii
+Yup, it seems like quite a mouthful, but the analysis suggests that it
+is a "right" object to control. And indeed, it is for this definition of
+$\lambda_t$ that we can prove the two facts above. The proofs of these two
+facts appear in standard texts (e.g., these downloadable books by
+[Yurii
 Nesterov](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.693.855&rep=rep1&type=pdf)
-and [Jim Renegar](https://epubs.siam.org/doi/book/10.1137/1.9780898718812)), and
-in [these notes](http://people.seas.harvard.edu/~cs224/fall14/lec/lec18.pdf) by
+and [Jim
+Renegar](https://epubs.siam.org/doi/book/10.1137/1.9780898718812)), and
+in [these
+notes](http://people.seas.harvard.edu/~cs224/fall14/lec/lec18.pdf) by
 Jelani Nelson. These details are very interesting, but perhaps not
 central to the course (no pun intended). The main goal this semester was
 to understand at a high level what the interior point methods are trying
@@ -174,7 +178,7 @@ minimizer, this translates to requiring that $|f''' (x)| \leq 2
 f'' (x)$. This has a resemblance to the definition of
 [self-concordance](https://en.wikipedia.org/wiki/Self-concordant_function),
 in case you've seen it before---self-concordance for a univariate
-function requires that $|f'''(x)| \leq 2 f''(x)^{3/2}$ (and for higher
+function requires that $|f''' (x)| \leq 2 f'' (x)^{3/2}$ (and for higher
 dimensions, this condition holds along every direction). Indeed, the two
 ideas are intimately connected: the latter is an affine invariant
 version of the former. For more details, see Chapter 4 of [Nesterov's 
