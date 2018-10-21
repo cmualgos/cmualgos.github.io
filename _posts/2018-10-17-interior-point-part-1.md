@@ -149,16 +149,14 @@ and recall that the Hessian of a function $f$ is the matrix $H(x)$ of
 second-derivatives at the point $x$. Then the definition of $\lambda_t$
 is formally:
 
-$$ \lambda_t(x) := \| \nabla f_t(x) \|_{H(x)^-1}. $$
+$$ \lambda_t(x) := \| \nabla f_t(x) \|_{H(x)^{-1}}. $$
 
 It is for this definition of $\lambda_t$ that we prove the two facts
 above. The proofs of the two facts above appear in standard texts (e.g.,
 these downloadable books by [Yurii
 Nesterov](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.693.855&rep=rep1&type=pdf)
-and Jim
-Renegar](https://epubs.siam.org/doi/book/10.1137/1.9780898718812)), and
-in [these
-notes](http://people.seas.harvard.edu/~cs224/fall14/lec/lec18.pdf) by
+and [Jim Renegar](https://epubs.siam.org/doi/book/10.1137/1.9780898718812)), and
+in [these notes](http://people.seas.harvard.edu/~cs224/fall14/lec/lec18.pdf) by
 Jelani Nelson. These details are very interesting, but perhaps not
 central to the course (no pun intended). The main goal this semester was
 to understand at a high level what the interior point methods are trying
@@ -171,9 +169,9 @@ post, etc.)
 
 If you read the [convergence
 proof](https://cs.nyu.edu/overton/NumericalComputing/newton.pdf) above,
-it works if $f$ satisfies $f''(x) \leq 2 f'(x)$. For finding the
-minimizer, this translates to requiring that $|f'''(x)| \leq 2
-f''(x)$. This has a resemblance to the definition of
+it works if $f$ satisfies $f'' (x) \leq 2 f'(x)$. For finding the
+minimizer, this translates to requiring that $|f''' (x)| \leq 2
+f'' (x)$. This has a resemblance to the definition of
 [self-concordance](https://en.wikipedia.org/wiki/Self-concordant_function),
 in case you've seen it before---self-concordance for a univariate
 function requires that $|f'''(x)| \leq 2 f''(x)^{3/2}$ (and for higher
