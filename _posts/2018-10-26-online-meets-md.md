@@ -7,7 +7,9 @@ use_math: true
 
 In the lecture on interior-point methods, we encountered the method of
 Lagrange multipliers. We went over it quickly, so here's a refresher and
-some discussion. It will be useful for tomorrow's lecture as well.
+some discussion. It will be useful for tomorrow's lecture as well, where
+we will solve some online optimization problems by writing a convex
+program, and staring at the optimality conditions for this program. 
 
 ## Lagrangian Duality: A Primer
 
