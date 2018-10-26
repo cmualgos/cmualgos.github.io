@@ -19,7 +19,7 @@ $$
  \min & f(x) && \tag{$\star$} \\
  \text{ subject to } g_i(x) &\leq 0 &\qquad \qquad &\forall\, i \in [m_1] \notag\\
  h_j(x) &= 0 && \forall j. \notag
-\end{align}
+\end{alignat}
 $$
 
 We will mostly consider _convex_ problems, where $f(x)$ and $g_i(x)$ are
