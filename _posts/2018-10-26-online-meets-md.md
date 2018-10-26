@@ -15,10 +15,10 @@ Consider the constrained problem with some $m_1$ inequality constraints,
 and $m_2$ equality constraints:
 
 $$
-\begin{align}
- \min & f(x) \tag{$\star$} \\
- \text{ subject to } g_i(x) &\leq 0 \forall\, i \in [m_1] \\
- h_j(x) &= 0 \forall j.
+\begin{alignat}{2}
+ \min & f(x) && \tag{$\star$} \\
+ \text{ subject to } g_i(x) &\leq 0 &\qquad \qquad &\forall\, i \in [m_1] \notag\\
+ h_j(x) &= 0 && \forall j. \notag
 \end{align}
 $$
 
@@ -31,10 +31,10 @@ _Lagrangian_) to be
 
 $$ L(x,\lambda, \mu) := f(x) + \sum_i \lambda_i g_i(x) + \sum_j \mu_j h_j(x).  $$
 
-Think of the _multipliers_ $\lambda \in \mathbb{R}^{m_1}$ that correspond to the
+Think of the _Lagrangian multipliers_ (a.k.a. _dual variables_) $\lambda \in \mathbb{R}^{m_1}$ that correspond to the
 inequality constraints as being non-negative, whereas those
 corresponding to the equality constraints can have arbitrary sign.
-Now the _Lagrange dual_ is defined as:
+(Seem familiar from LP duality?) Now the _Lagrange dual_ is defined as:
 
 $$ g(\lambda, \mu) := \min_x L(x, \lambda, \mu). $$
 
@@ -48,8 +48,8 @@ original problem (as long as $\lambda \geq 0$)! Indeed, take the optimal
 solution $x^\*$ for the problem $(\star)$. Then substituting that $x^\*$
 into $L(\cdot)$ gives
 
-$$ L(x^*,\lambda, \mu) = f(x^*) + \sum_i \lambda_i \cdot \text{something
-non-positive} + \sum_j \mu_j \cdot 0. $$
+$$ L(x^*,\lambda, \mu) = f(x^*) + \sum_i \lambda_i \cdot \text{(something
+non-positive)} + \sum_j \mu_j \cdot 0. $$
 
 Since $\lambda \geq 0$, we get $L(x^\*,\lambda, \mu) \leq f(x^\*)$. So,
 
@@ -65,7 +65,7 @@ dual problem
 
 $$
 \begin{align}
-\max g(\lambda, \mu) \quad s.t. \quad \lambda_i \geq 0 \;\; \forall
+ \max g(\lambda, \mu) \quad s.t. \quad \lambda_i \geq 0 \;\; \forall
 \, i.  \tag{$\star\star$}
 \end{align}
 $$
@@ -73,23 +73,27 @@ $$
 Weak duality follows from the arguments above: this best lower bound is
 still a lower bound, so the optimum for the dual $(\star\star)$ is a
 lower bound on the optimum for the primal $(\star)$. For strong duality
-we need some extra conditions, since strong duality may not hold in such
-generality. If course, if the original primal problem was linear, this
-is just reproving linear programming duality: the dual problem will also
-be linear, and strong duality will hold.
+we need some extra conditions, since strong duality may not hold in the
+generality we've been operating under. If course, if the original primal
+problem was linear, all the above steps just reprove linear programming
+duality: hence the dual problem will also be linear, and also strong
+duality will hold.
 
 For more general problems, even for convex problems, we need some
-niceness conditions to guarantee strong duality. The most commonly ones
-are the _Slater conditions_ which say that if the primal problem is
+niceness conditions to guarantee strong duality. The most commonly used
+ones are the _Slater conditions_: these say that if the primal problem is
 convex, and there is a _strictly feasible_ point (i.e., $f_i(x) < 0$ for
 all $x$, and $h_j(x) = 0$), then strong duality holds.
 
 ## The KKT Optimality Conditions
 
-For now, assume that the problem is convex, and strong duality holds.
-Then we have particularly nice necessary and sufficient conditions for
-optimality. The point $x$ is optimal for $(\star)$ if and only if there
-exist $\lambda \geq 0$ and $\mu$ such that *(a)* $x$ is primal feasible:
+The other thing you should know about these method of Lagrange
+multipliers is they lead to very nice optimality conditions. For now,
+assume that the primal problem is convex, and that strong duality
+holds. Then we have particularly nice necessary and sufficient
+conditions for optimality. The point $x$ is optimal for $(\star)$ if and
+only if there exist $\lambda \geq 0$ and $\mu$ unconstrained such that
+*(a)* $x$ is primal feasible:
 
 $$ g_i(x) \leq 0, h_i(x) = 0, $$
 
@@ -99,10 +103,10 @@ $$ \nabla_x L(x,\lambda, \mu) := \nabla f(x) + \sum_i \lambda_i \nabla g_i(x) + 
 
 and *(c)* the _complementary slackness_ conditions hold:
 
-$$ \lambda_i \times f_i(x) = 0. $$
+$$ \lambda_i \times g_i(x) = 0. $$
 
-And then $(\lambda, \mu)$ are also an optimal dual solution to
-$(\star\star)$.
+That's it. And then the the certificate $(\lambda, \mu)$ also form an
+optimal solution to the dual $(\star\star)$.
 
 This set of conditions above are called the
 [_KKT_](https://en.wikipedia.org/wiki/Karush%E2%80%93Kuhn%E2%80%93Tucker_conditions)
