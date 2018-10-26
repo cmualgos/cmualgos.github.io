@@ -59,9 +59,10 @@ $$ g(\lambda, \mu) = \min_x L(x, \lambda, \mu) \leq L(x^*, \lambda, \mu)
 Great, we have a family of lower bounds on the optimum given by the dual
 function $g$, so that we get a dual for each setting of $\lambda \geq 0$
 and $\mu$. And $g$ is a concave function, so why not _maximize_ it?
-(Remember, we usually want to minimize convex functions, and maximize
-concave ones.)  This should give the largest lower bound! So define the
-dual problem
+(Remember, we usually like to minimize _convex_ functions, and maximize
+_concave_ ones, doing the other way around typically leads to hard
+problems.) Maximizing the dual function should give the largest lower
+bound! So define the _dual optimization problem_
 
 $$
 \begin{align}
