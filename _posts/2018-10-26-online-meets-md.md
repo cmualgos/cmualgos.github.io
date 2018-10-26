@@ -16,7 +16,7 @@ and $m_2$ equality constraints:
 
 $$
 \begin{align}
- \min & f(x) \tag{\star} \\
+ \min & f(x) \tag{$\star$} \\
  \text{ subject to } g_i(x) &\leq 0 \forall\, i \in [m_1] \\
  h_j(x) &= 0 \forall j.
 \end{align}
@@ -31,7 +31,7 @@ _Lagrangian_) to be
 
 $$ L(x,\lambda, \mu) := f(x) + \sum_i \lambda_i g_i(x) + \sum_j \mu_j h_j(x).  $$
 
-Think of the _multipliers_ $\lambda \in \R^{m_1}$ that correspond to the
+Think of the _multipliers_ $\lambda \in \mathbb{R}^{m_1}$ that correspond to the
 inequality constraints as being non-negative, whereas those
 corresponding to the equality constraints can have arbitrary sign.
 Now the _Lagrange dual_ is defined as:
@@ -45,13 +45,13 @@ these variables, one linear function for each $x$.
 
 The second claim is that the dual is always a lower bound on the
 original problem (as long as $\lambda \geq 0$)! Indeed, take the optimal
-solution $x^*$ for the problem $(\star)$. Then substituting that $x^*$
+solution $x^\*$ for the problem $(\star)$. Then substituting that $x^\*$
 into $L(\cdot)$ gives
 
 $$ L(x^*,\lambda, \mu) = f(x^*) + \sum_i \lambda_i \cdot \text{something
 non-positive} + \sum_j \mu_j \cdot 0. $$
 
-Since $\lambda \geq 0$, we get $ L(x^*,\lambda, \mu) \leq f(x^*)$. So,
+Since $\lambda \geq 0$, we get $L(x^\*,\lambda, \mu) \leq f(x^\*)$. So,
 
 $$ g(\lambda, \mu) = \min_x L(x, \lambda, \mu) \leq L(x^*, \lambda, \mu)
 \leq f(x^*). $$
@@ -66,7 +66,7 @@ dual problem
 $$
 \begin{align}
 \max g(\lambda, \mu) \quad s.t. \quad \lambda_i \geq 0 \;\; \forall
-\, i.  \tag{\star\star}
+\, i.  \tag{$\star\star$}
 \end{align}
 $$
 
@@ -89,15 +89,15 @@ all $x$, and $h_j(x) = 0$), then strong duality holds.
 For now, assume that the problem is convex, and strong duality holds.
 Then we have particularly nice necessary and sufficient conditions for
 optimality. The point $x$ is optimal for $(\star)$ if and only if there
-exist $\lambda \geq 0$ and $\mu$ such that (a)~$x$ is primal feasible:
+exist $\lambda \geq 0$ and $\mu$ such that *(a)* $x$ is primal feasible:
 
 $$ g_i(x) \leq 0, h_i(x) = 0, $$
 
-(b)~the gradient of the Lagrangian (with respect to $x$) is zero:
+*(b)* the gradient of the Lagrangian (with respect to $x$) is zero:
 
 $$ \nabla_x L(x,\lambda, \mu) := \nabla f(x) + \sum_i \lambda_i \nabla g_i(x) + \sum_j \mu_j \nabla h_j(x) = 0. $$
 
-and (c)~the complementary slackness conditions hold:
+and *(c)* the _complementary slackness_ conditions hold:
 
 $$ \lambda_i \times f_i(x) = 0. $$
 
@@ -106,9 +106,17 @@ $(\star\star)$.
 
 This set of conditions above are called the
 [_KKT_](https://en.wikipedia.org/wiki/Karush%E2%80%93Kuhn%E2%80%93Tucker_conditions)
-conditions. These were initially called the Kuhn-Tucker conditions, and attributed to a conference paper of [Harold Kuhn](https://en.wikipedia.org/wiki/Harold_W._Kuhn) (who gave
-the Hungarian method for max-weight matchings) and [Albert Tucker](https://en.wikipedia.org/wiki/Albert_W._Tucker) (who
-was later the president of the Math Association of America), but later found
-to have been given in the masters' thesis of [William Karush](https://en.wikipedia.org/wiki/William_Karush).
-There are weaker conditions under which the KKT conditions are
-necessary and sufficient, which you can find in standard texts.
+conditions. These were initially called the Kuhn-Tucker conditions, and
+attributed to a conference paper of [Harold
+Kuhn](https://en.wikipedia.org/wiki/Harold_W._Kuhn) (who gave the
+Hungarian method for max-weight matchings) and [Albert
+Tucker](https://en.wikipedia.org/wiki/Albert_W._Tucker) (who was later
+the president of the Math Association of America), but later found to
+have been given in the masters' thesis of [William
+Karush](https://en.wikipedia.org/wiki/William_Karush).  If your problem
+is not convex, or if strong duality may not hold, you should check out weaker
+conditions under which the KKT conditions are necessary and sufficient;
+these you can find in standard texts like [Boyd and
+Vanderberghe](http://web.stanford.edu/~boyd/cvxbook/). You never know
+what Google may return: [here's](https://davidrosenberg.github.io/ml2015/docs/convex-optimization.pdf) an
+extremely abridged version of their book.
