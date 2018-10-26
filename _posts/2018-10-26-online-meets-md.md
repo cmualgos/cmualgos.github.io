@@ -18,7 +18,7 @@ $$
 \begin{alignat}{2}
  \min & f(x) && \tag{$\star$} \\
  \text{ subject to } g_i(x) &\leq 0 &\qquad \qquad &\forall\, i \in [m_1] \notag\\
- h_j(x) &= 0 && \forall j. \notag
+ h_j(x) &= 0 && \forall j \in [m_2]. \notag
 \end{alignat}
 $$
 
