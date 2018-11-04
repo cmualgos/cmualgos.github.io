@@ -51,7 +51,7 @@ scaling that loses less, and gets the factor of $2$ we wanted.
 
 BTW, Roie asked a question about "how many samples are needed"? We
 assumed that we know the distribution of the r.v.s $X_i$. What if we
-need to learn them as well? [Azar, Kleinberg and Weinberg]() show that
+need to learn them as well? [Azar, Kleinberg and Weinberg](https://arxiv.org/abs/1307.3736) show that
 if we get one sample from each $X_i$, we can still get a constant
 competitive algorithm, but the detailed tradeoffs between sample
 complexity and competitiveness are still not fully understood.
