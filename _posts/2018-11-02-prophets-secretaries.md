@@ -61,7 +61,7 @@ complexity and competitiveness are still not fully understood.
 For the graphic matroid problem, we proposed the following algorithm:
 color the vertices red and blue with equal probability. Now for each red
 vertex, run the single-item secretary algorithm on the bichromatic edges
-hitting that vertex. (Corwin pointd out that we need to know the graph
+hitting that vertex. (Corwin pointed out that we need to know the graph
 to find out how many such bichromatic edges exist, incident to each
 node. This is because the secretary algorithm needs to know $n$ to work
 correctly. Do you see a way around this? Answers on a postcard to me,
@@ -84,6 +84,6 @@ $r$ is the rank of the matroid, is due to [Feldman, Svensson, and
 Zenklusen](https://arxiv.org/abs/1404.4473). And here's a [slightly older survey](http://www.cs.jhu.edu/~mdinitz/papers/secretary-survey.pdf) by our own Mike Dinitz;
 he and I had spent a bunch of time on this problem when he was at CMU.
 
-BTW, the matroid version of the propher inequality problem is understood
-by now, for general matroids---showing that prophets are easier than
-secretaries, in this setting.
+BTW, the matroid version of the prophet inequality problem is understood
+by now, for general matroids: [here's](https://arxiv.org/abs/1201.4764) a $2$-approximation due to Kleinberg and Weinberg---showing that prophets are easier than
+secretaries, in this setting. 
